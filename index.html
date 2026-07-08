@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema Farmacia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Sistema de Farmacia</h1>
+    <p>Inventarios, caducidad, compras, ventas, proveedores, clientes y premios.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Registrar proveedor</h2>
+      <input type="text" id="nombreProveedor" placeholder="Nombre del proveedor">
+      <button onclick="agregarProveedor()">Guardar proveedor</button>
+    </section>
+
+    <section class="card">
+      <h2>Registrar cliente</h2>
+      <input type="text" id="nombreCliente" placeholder="Nombre del cliente">
+      <button onclick="agregarCliente()">Guardar cliente</button>
+    </section>
+
+    <section class="card">
+      <h2>Registrar medicamento</h2>
+      <input type="text" id="nombreProducto" placeholder="Nombre del medicamento">
+      <input type="number" id="precioProducto" placeholder="Precio de venta">
+      <input type="number" id="stockProducto" placeholder="Stock inicial">
+      <input type="date" id="fechaCaducidad">
+      <select id="proveedorProducto"></select>
+      <button onclick="agregarProducto()">Guardar medicamento</button>
+    </section>
+
+    <section class="card">
+      <h2>Registrar compra</h2>
+      <select id="productoCompra"></select>
+      <select id="proveedorCompra"></select>
+      <input type="number" id="cantidadCompra" placeholder="Cantidad comprada">
+      <input type="number" id="costoCompra" placeholder="Costo total">
+      <button onclick="registrarCompra()">Registrar compra</button>
+    </section>
+
+    <section class="card">
+      <h2>Registrar venta</h2>
+      <select id="clienteVenta"></select>
+      <select id="productoVenta"></select>
+      <input type="number" id="cantidadVenta" placeholder="Cantidad vendida">
+      <button onclick="registrarVenta()">Registrar venta</button>
+    </section>
+
+    <section class="card wide">
+      <h2>Inventario</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Medicamento</th>
+            <th>Proveedor</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Caducidad</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaInventario"></tbody>
+      </table>
+    </section>
+
+    <section class="card wide">
+      <h2>Ventas realizadas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Medicamento</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="tablaVentas"></tbody>
+      </table>
+    </section>
+
+    <section class="card wide">
+      <h2>Clientes premiados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Total comprado</th>
+            <th>Premio</th>
+          </tr>
+        </thead>
+        <tbody id="tablaRanking"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
